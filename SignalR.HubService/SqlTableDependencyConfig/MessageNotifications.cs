@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.SignalR;
-using SignalR.HubService.Models.OnlineUsersHub;
+﻿using SignalR.HubService.Dtos.OnlineUserHubDtos;
 using System;
-using System.Threading.Tasks;
 using TableDependency.SqlClient;
 using TableDependency.SqlClient.Base;
 using TableDependency.SqlClient.Base.Enums;
@@ -11,12 +9,12 @@ namespace SignalR.HubService.SqlTableDependencyConfig
 {
     public class MessageNotifications : IDisposable
     {
-        private static SqlTableDependency<OnlineUser> sqlTableDependency;
+        private static SqlTableDependency<OnlineUserHubDto> sqlTableDependency;
         private const string TableName = "TbOnlineUser";
 
         public MessageNotifications(string connectionString)
         {
-            var mapper = new ModelToTableMapper<OnlineUser>();
+            var mapper = new ModelToTableMapper<OnlineUserHubDto>();
             mapper.AddMapping(cs => cs.IpAddress, "IpAddress")
                   .AddMapping(cs => cs.Browser, "Browser")
                   .AddMapping(cs => cs.Country, "Country")
@@ -26,7 +24,7 @@ namespace SignalR.HubService.SqlTableDependencyConfig
                   .AddMapping(cs => cs.Url, "Url")
                   .AddMapping(cs => cs.ConnectionId, "ConnectionId");
 
-            sqlTableDependency = new SqlTableDependency<OnlineUser>(connectionString, TableName, mapper: mapper);
+            sqlTableDependency = new SqlTableDependency<OnlineUserHubDto>(connectionString, TableName, mapper: mapper);
             sqlTableDependency.OnChanged += HandleOnChanged;
             sqlTableDependency.Start();
         }
@@ -39,7 +37,7 @@ namespace SignalR.HubService.SqlTableDependencyConfig
         public event NotificationEventHandler OnNewMessage;
 
         // you need to remove your listeners from an event before you destroy a class instance
-        private void HandleOnChanged(object sender, RecordChangedEventArgs<OnlineUser> e)
+        private void HandleOnChanged(object sender, RecordChangedEventArgs<OnlineUserHubDto> e)
         {
             if (e.ChangeType == ChangeType.Insert ||
                 e.ChangeType == ChangeType.Update ||

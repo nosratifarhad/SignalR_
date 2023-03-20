@@ -90,7 +90,7 @@
     <Compile Include="SqlTableDependencyConfig\MessageNotifications.cs" />
     <Compile Include="Hubs\IHobs\IOnlineUserHub.cs" />
     <Compile Include="Hubs\OnlineUserHub.cs" />
-    <Compile Include="Models\OnlineUsersHub\OnlineUser.cs" />
+    <Compile Include="Dtos\OnlineUserHubDtos\OnlineUserHubDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlTableDependencyConfig\DatabaseAccess.cs" />
     <Compile Include="SqlTableDependencyConfig\NotificationEventArgs.cs" />

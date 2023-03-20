@@ -48,7 +48,7 @@
     <Compile Include="Implementation\OnlineUserServices\OnlineUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceRegister.cs" />
-    <Compile Include="ViewModels\OnlineUserViewModels\OnlineUserViewModel.cs" />
+    <Compile Include="ViewModels\OnlineUserViewModels\OnlineUserVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SignalR.Infrastructure\SignalR.Infrastructure.csproj">

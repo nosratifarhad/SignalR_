@@ -23,7 +23,7 @@ namespace SignalR.API.Controllers
         }
 
         [HttpGet("Get")]
-        public async Task<IList<OnlineUserViewModel>> GetOnlineUsers()
+        public async Task<IList<OnlineUserVM>> GetOnlineUsers()
         {
             return await _onlineUserService.GetOnlineUsers();
         }

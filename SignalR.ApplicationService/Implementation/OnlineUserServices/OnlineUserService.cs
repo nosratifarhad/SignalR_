@@ -8,8 +8,12 @@ namespace SignalR.ApplicationService.Implementation.OnlineUserServices
 {
     public class OnlineUserService : IOnlineUserService
     {
-        #region ctor
+        #region Fields
         private IOnlineUserRepository _onlineUserRepository;
+
+        #endregion Fields
+
+        #region ctor
 
         public OnlineUserService(IOnlineUserRepository onlineUserRepository)
         {
@@ -18,10 +22,10 @@ namespace SignalR.ApplicationService.Implementation.OnlineUserServices
 
         #endregion
 
-        public async Task<IList<OnlineUserViewModel>> GetOnlineUsers()
+        public async Task<IEnumerable<OnlineUserVM>> GetOnlineUsers()
         {
             var onlineUserDTOs = await _onlineUserRepository.GetOnlineUsersAsync();
-            IList<OnlineUserViewModel> onlineUserViewModels = new List<OnlineUserViewModel>();
+            List<OnlineUserVM> onlineUserViewModels = new List<OnlineUserVM>();
 
             foreach (var item in onlineUserDTOs)
             {
@@ -29,7 +33,7 @@ namespace SignalR.ApplicationService.Implementation.OnlineUserServices
                 string presencedate = string.Empty;
                 //GetPresenceDate(item.EntryDate, item.OutDate, ref presencedate);
                 ///
-                onlineUserViewModels.Add(new OnlineUserViewModel
+                onlineUserViewModels.Add(new OnlineUserVM
                 {
                     IpAddress = item.IpAddress,
                     Browser = item.Browser,
@@ -41,10 +45,11 @@ namespace SignalR.ApplicationService.Implementation.OnlineUserServices
                     Url = item.Url
                 });
             }
+
             return onlineUserViewModels;
         }
 
-        public string GetPresenceDate(string outDate, string entryDate, ref string PresenceDate)
+        public string GetPresenceDate(string outDate, string entryDate, ref string presenceDate)
         {
             return "";
         }

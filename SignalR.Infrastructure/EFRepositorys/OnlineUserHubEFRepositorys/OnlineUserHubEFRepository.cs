@@ -1,6 +1,6 @@
 ﻿using SignalR.Infrastructure.Context;
 using SignalR.Infrastructure.DBEntitys;
-using SignalR.Infrastructure.DTOs.OnlineUserHubDTOs;
+using SignalR.Infrastructure.Dtos.OnlineUserHubDTOs;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,7 +16,7 @@ namespace SignalR.Infrastructure.EFRepositorys.OnlineUserHubEFRepositorys
 {
     public class OnlineUserHubEFRepository : IOnlineUserHubEFRepository
     {
-        public async Task AddOnlineUserAsync(OnlineUserHubDTO onlineclient)
+        public async Task AddOnlineUserAsync(OnlineUserHubDto onlineclient)
         {
             try
             {

@@ -1,4 +1,4 @@
-﻿using SignalR.ApplicationService.ViewModels.OnlineUserViewModels;
+﻿using SignalR.ApplicationService.ViewModels.OnlineUserVMs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

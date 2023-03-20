@@ -1,19 +1,13 @@
-﻿using SignalR.Infrastructure.DTOs.OnlineUserDTOs;
+﻿using SignalR.Infrastructure.Dtos.OnlineUserDTOs;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
-using System.Data;
-using SignalR.Infrastructure.Common;
-using Dapper;
+
 namespace SignalR.Infrastructure.EFRepositorys.OnlineUserEFRepositorys
 {
     public class OnlineUserEFRepository : IOnlineUserEFRepository
     {
-        public async Task<IEnumerable<OnlineUserDTO>> GetOnlineUsersAsync()
+        public async Task<IEnumerable<OnlineUserDto>> GetOnlineUsersAsync()
         {
             #region EF
             //IList<OnlineUserDTO> onlineUserDTOs = new List<OnlineUserDTO>();

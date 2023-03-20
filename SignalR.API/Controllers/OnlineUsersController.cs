@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.ApplicationService.Contract;
 using SignalR.ApplicationService.Contract.IOnlineUserServices;
-using SignalR.ApplicationService.ViewModels.OnlineUserViewModels;
+using SignalR.ApplicationService.ViewModels.OnlineUserVMs;
 
 namespace SignalR.API.Controllers
 {
@@ -23,7 +23,7 @@ namespace SignalR.API.Controllers
         }
 
         [HttpGet("Get")]
-        public async Task<IList<OnlineUserVM>> GetOnlineUsers()
+        public async Task<IEnumerable<OnlineUserVM>> GetOnlineUsers()
         {
             return await _onlineUserService.GetOnlineUsers();
         }

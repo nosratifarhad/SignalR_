@@ -1,6 +1,6 @@
-﻿namespace SignalR.HubService.Models.OnlineUsersHub
+﻿namespace SignalR.HubService.Dtos.OnlineUserHubDtos
 {
-    public class OnlineUser
+    public class OnlineUserHubDto
     {
         public int Id { get; set; }
 

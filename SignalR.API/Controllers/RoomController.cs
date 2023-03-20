@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.SignalR;
 using SignalR.ApplicationService.Contract.IOnlineUserServices;
 using SignalR.HubService.Hubs;
-using SignalR.HubService.Models.OnlineUsersHub;
+using SignalR.HubService.Dtos.OnlineUserHubDtos;
 using SignalR.HubService.SqlTableDependencyConfig;
 using System.Threading.Tasks;
 
@@ -24,7 +24,7 @@ namespace SignalR.API.Controllers
         }
         #endregion
 
-        private async void Rooms_OnEnteredRoom(OnlineUser server, NotificationEventArgs e)
+        private async void Rooms_OnEnteredRoom(OnlineUserHubDto server, NotificationEventArgs e)
         {
             var onlineUserViewModels = await Task.FromResult(await _onlineUserService.GetOnlineUsers());
 

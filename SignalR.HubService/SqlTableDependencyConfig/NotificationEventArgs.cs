@@ -1,4 +1,4 @@
-﻿using SignalR.HubService.Models.OnlineUsersHub;
+﻿using SignalR.HubService.Dtos.OnlineUserHubDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +10,13 @@ namespace SignalR.HubService.SqlTableDependencyConfig
 {
     public class NotificationEventArgs : EventArgs
     {
-        public RecordChangedEventArgs<OnlineUser> ChatServerArgs { get; private set; }
+        public RecordChangedEventArgs<OnlineUserHubDto> ChatServerArgs { get; private set; }
 
-        public NotificationEventArgs(RecordChangedEventArgs<OnlineUser> chatServerArgs)
+        public NotificationEventArgs(RecordChangedEventArgs<OnlineUserHubDto> chatServerArgs)
         {
             this.ChatServerArgs = chatServerArgs;
         }
     }
-    public delegate void NotificationEventHandler(OnlineUser chatServer, NotificationEventArgs e);
+    public delegate void NotificationEventHandler(OnlineUserHubDto chatServer, NotificationEventArgs e);
 
 }

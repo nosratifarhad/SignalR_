@@ -1,5 +1,6 @@
 ﻿using SignalR.ApplicationService.Contract.IOnlineUserServices;
 using SignalR.ApplicationService.ViewModels.OnlineUserVMs;
+using SignalR.Infrastructure.Dtos.OnlineUserDTOs;
 using SignalR.Infrastructure.Repositorys.OnlineUserRepositorys;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -24,10 +25,23 @@ namespace SignalR.ApplicationService.Implementation.OnlineUserServices
 
         public async Task<IEnumerable<OnlineUserVM>> GetOnlineUsers()
         {
-            var onlineUserDTOs = await _onlineUserRepository.GetOnlineUsersAsync();
+            var onlineUserDtolist = await _onlineUserRepository.GetOnlineUsersAsync();
+
+            var onlineUserVMs = ToViewModel(onlineUserDtolist);
+
+            return onlineUserVMs;
+        }
+
+        public string GetPresenceDate(string outDate, string entryDate, ref string presenceDate)
+        {
+            return "";
+        }
+
+        private IEnumerable<OnlineUserVM> ToViewModel(IEnumerable<OnlineUserDto> onlineUserDtolist)
+        {
             List<OnlineUserVM> onlineUserViewModels = new List<OnlineUserVM>();
 
-            foreach (var item in onlineUserDTOs)
+            foreach (var item in onlineUserDtolist)
             {
                 ///To Do Get PresenceDate
                 string presencedate = string.Empty;
@@ -40,19 +54,14 @@ namespace SignalR.ApplicationService.Implementation.OnlineUserServices
                     Country = item.Country,
                     EntryDate = item.EntryDate.ToString(),
                     OutDate = item.OutDate.ToString() ?? "",
-                    PresenceDate = presencedate??"",
+                    PresenceDate = presencedate ?? "",
                     OS = item.OS,
                     Url = item.Url
                 });
             }
 
-            return onlineUserViewModels;
-        }
+            return (IEnumerable<OnlineUserVM>)onlineUserViewModels;
 
-        public string GetPresenceDate(string outDate, string entryDate, ref string presenceDate)
-        {
-            return "";
         }
-
     }
 }

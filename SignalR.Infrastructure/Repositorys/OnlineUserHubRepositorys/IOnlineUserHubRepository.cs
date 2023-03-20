@@ -1,4 +1,4 @@
-﻿using SignalR.Infrastructure.DTOs.OnlineUserHubDTOs;
+﻿using SignalR.Infrastructure.Dtos.OnlineUserHubDTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,6 @@ namespace SignalR.Infrastructure.Repositorys.OnlineUserHubRepositorys
     public interface IOnlineUserHubRepository
     {
         Task OnDisconnectedOnlineUserAsync(string connectionId,DateTime dateTime);
-        Task AddOnlineUserAsync( OnlineUserHubDTO onlineclient);
+        Task AddOnlineUserAsync( OnlineUserHubDto onlineclient);
     }
 }

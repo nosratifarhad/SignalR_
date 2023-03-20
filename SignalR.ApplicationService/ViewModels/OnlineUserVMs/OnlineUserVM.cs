@@ -1,5 +1,4 @@
-﻿
-namespace SignalR.ApplicationService.ViewModels.OnlineUserViewModels
+﻿namespace SignalR.ApplicationService.ViewModels.OnlineUserVMs
 {
     public class OnlineUserVM
     {

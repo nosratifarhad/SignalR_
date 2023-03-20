@@ -1,4 +1,4 @@
-﻿using SignalR.Infrastructure.DTOs.OnlineUserDTOs;
+﻿using SignalR.Infrastructure.Dtos.OnlineUserDTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace SignalR.Infrastructure.Repositorys.OnlineUserRepositorys
 {
     public interface IOnlineUserRepository
     {
-        Task<IEnumerable<OnlineUserDTO>> GetOnlineUsersAsync();
+        Task<IEnumerable<OnlineUserDto>> GetOnlineUsersAsync();
     }
 }

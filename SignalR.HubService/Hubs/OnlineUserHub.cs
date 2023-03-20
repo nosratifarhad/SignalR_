@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using SignalR.HubService.Hubs.IHobs;
-using SignalR.Infrastructure.DTOs.OnlineUserHubDTOs;
+using SignalR.Infrastructure.Dtos.OnlineUserHubDTOs;
 using SignalR.Infrastructure.Repositorys.OnlineUserHubRepositorys;
 using System;
 using System.Threading.Tasks;
@@ -34,7 +34,7 @@ namespace SignalR.HubService.Hubs
         {
             try
             {
-                OnlineUserHubDTO onlineUserHubDTO = new OnlineUserHubDTO(ipAddress, browser, country, entrydate, os, url, Context.ConnectionId);
+                OnlineUserHubDto onlineUserHubDTO = new OnlineUserHubDto(ipAddress, browser, country, entrydate, os, url, Context.ConnectionId);
 
                 //TODO Persistence
                 await _onlineUserHubRepository.AddOnlineUserAsync(onlineUserHubDTO);

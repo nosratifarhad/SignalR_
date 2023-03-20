@@ -1,4 +1,4 @@
-﻿using SignalR.Infrastructure.DTOs.OnlineUserDTOs;
+﻿using SignalR.Infrastructure.Dtos.OnlineUserDTOs;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -13,14 +13,14 @@ namespace SignalR.Infrastructure.Repositorys.OnlineUserRepositorys
 {
     public class OnlineUserRepository : IOnlineUserRepository
     {
-        public async Task<IEnumerable<OnlineUserDTO>> GetOnlineUsersAsync()
+        public async Task<IEnumerable<OnlineUserDto>> GetOnlineUsersAsync()
         {
             #region dapper
 
             //string connectionString = ConfigurationManager.ConnectionStrings["SignalRContext"].ConnectionString;
             using (IDbConnection conn = new SqlConnection("Data Source=DESKTOP-RE8CP45;Initial Catalog=SignalR_DB;Integrated Security=SSPI;"))
             {
-                return await conn.QueryAsync<OnlineUserDTO>("dbo.GetOnlineUser");
+                return await conn.QueryAsync<OnlineUserDto>("dbo.GetOnlineUser");
             }
 
             #endregion

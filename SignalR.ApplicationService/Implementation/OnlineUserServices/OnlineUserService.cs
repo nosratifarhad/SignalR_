@@ -1,5 +1,5 @@
 ﻿using SignalR.ApplicationService.Contract.IOnlineUserServices;
-using SignalR.ApplicationService.ViewModels.OnlineUserViewModels;
+using SignalR.ApplicationService.ViewModels.OnlineUserVMs;
 using SignalR.Infrastructure.Repositorys.OnlineUserRepositorys;
 using System.Collections.Generic;
 using System.Threading.Tasks;

@@ -96,8 +96,8 @@
   <ItemGroup>
     <Compile Include="Common\AppConfig.cs" />
     <Compile Include="Context\SignalRContext.cs" />
-    <Compile Include="DTOs\OnlineUserDTOs\OnlineUserDTO.cs" />
-    <Compile Include="DTOs\OnlineUserHubDTOs\OnlineUserHubDTO.cs" />
+    <Compile Include="Dtos\OnlineUserDTOs\OnlineUserDto.cs" />
+    <Compile Include="Dtos\OnlineUserHubDTOs\OnlineUserHubDto.cs" />
     <Compile Include="EFRepositorys\OnlineUserHubEFRepositorys\IOnlineUserHubEFRepository.cs" />
     <Compile Include="EFRepositorys\OnlineUserHubEFRepositorys\OnlineUserHubEFRepository.cs" />
     <Compile Include="EFRepositorys\OnlineUserEFRepositorys\IOnlineUserEFRepository.cs" />

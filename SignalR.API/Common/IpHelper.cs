@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
-using System.Threading.Tasks;
 
 namespace SignalR.API.Common
 {
-    public class IpHelper
+    public class IPHelper
     {
         public static string GetIpAddress()
         {

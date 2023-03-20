@@ -1,28 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SignalR.Infrastructure.DTOs.OnlineUserHubDTOs
+namespace SignalR.Infrastructure.Dtos.OnlineUserHubDTOs
 {
-    public class OnlineUserHubDTO
+    public class OnlineUserHubDto
     {
-        public string IpAddress { get; private set; }
-        public string Browser { get; private set; }
-        public string Country { get; private set; }
-        public DateTime EntryDate { get; private set; }
-        public string OS { get; private set; }
-        public string Url { get; private set; }
-        public string ConnectionId { get; private set; }
-        public OnlineUserHubDTO(
-        string ipAddress,
-        string browserType,
-        string country,
-        string entryDate,
-        string systemType,
-        string route,
-            string connectionId)
+        public OnlineUserHubDto(
+         string ipAddress,
+         string browserType,
+         string country,
+         string entryDate,
+         string systemType,
+         string route,
+         string connectionId)
         {
             this.IpAddress = ipAddress;
             this.Browser = browserType;
@@ -33,23 +22,23 @@ namespace SignalR.Infrastructure.DTOs.OnlineUserHubDTOs
             this.ConnectionId = connectionId;
         }
 
+        public string IpAddress { get; set; }
+
+        public string Browser { get; set; }
+        
+        public string Country { get; set; }
+        
+        public DateTime EntryDate { get; set; }
+        
+        public string OS { get; set; }
+        
+        public string Url { get; set; }
+        
+        public string ConnectionId { get; set; }
+        
         public bool IsEqualIpAddress(string ipAddress)
         {
             return this.IpAddress == ipAddress;
         }
     }
-    //{
-    //    public OnlineUserHubDTO()
-    //    {
-
-    //    }
-    //    public string IpAddress { get; set; }
-    //    public string BrowserType { get; set; }
-    //    public string Country { get; set; }
-    //    public string EntryDate { get; set; }
-    //    public DateTime OutDate { get; set; }
-    //    public DateTime PresenceDate { get; set; }
-    //    public string SystemType { get; set; }
-    //    public string Route { get; set; }
-    //}
 }

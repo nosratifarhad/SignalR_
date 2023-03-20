@@ -37,6 +37,7 @@ namespace SignalR.ApplicationService.Implementation.OnlineUserServices
             return "";
         }
 
+        #region Private
         private IEnumerable<OnlineUserVM> ToViewModel(IEnumerable<OnlineUserDto> onlineUserDtolist)
         {
             List<OnlineUserVM> onlineUserViewModels = new List<OnlineUserVM>();
@@ -63,5 +64,7 @@ namespace SignalR.ApplicationService.Implementation.OnlineUserServices
             return (IEnumerable<OnlineUserVM>)onlineUserViewModels;
 
         }
+
+        #endregion Private
     }
 }
